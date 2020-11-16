@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "409a5bba-3a83-47e6-89e7-5b8d9969defd",
+		"name": "Coffee Supply API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieve All Coffee Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}:{{port}}/coffee",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"coffee"
+					]
+				},
+				"description": "Get all coffee products from the Coffee repository."
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Coffee Products by originCountry",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}:{{port}}/coffee/search?originCountry=Kenya",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"coffee",
+						"search"
+					],
+					"query": [
+						{
+							"key": "originCountry",
+							"value": "Kenya"
+						}
+					]
+				},
+				"description": "Get coffee products by originCountry from the repository."
+			},
+			"response": []
+		},
+		{
+			"name": "Add Coffee Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sku\": 10007,\n    \"productName\": \"Encanto\",\n    \"description\": \"Papaya, milk chocolate, muscavado\",\n    \"originCountry\": \"Nicaragua\",\n    \"price\": 9.00\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}:{{port}}/coffee",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"coffee"
+					]
+				},
+				"description": "Add a new Coffee product to the repository."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Coffee Product by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}:{{port}}/coffee/4",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"coffee",
+						"4"
+					]
+				},
+				"description": "Delete a Coffee product by Id from the repository."
+			},
+			"response": []
+		},
+		{
+			"name": "Update Coffee Product by Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sku\": 10003,\n    \"productName\": \"Mama Mina\",\n    \"description\": \"Toffee apple, orange rid, sweet tobacco\",\n    \"originCountry\": \"Nicaragua\",\n    \"price\": 9.75\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}:{{port}}/coffee/3",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"coffee",
+						"3"
+					]
+				},
+				"description": "Update a Coffee product by Id and JSON request body."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "18043982-487c-4514-ad54-405548daaaba",
+			"key": "url",
+			"value": "localhost"
+		},
+		{
+			"id": "3851fc5c-7b7f-4db1-959a-dfb120a4782a",
+			"key": "port",
+			"value": "8081"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
