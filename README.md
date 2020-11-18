@@ -1,4 +1,8 @@
-# coffee-supply-api project
+# Quarkus: Coffee Supply API
+
+## Blogpost
+
+Check out the blogpost [here](https://www.nealshah.dev/posts/2020/11/quarkus-kotlin-and-postgresql-a-beginners-journey/) to learn more about this repository.
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
